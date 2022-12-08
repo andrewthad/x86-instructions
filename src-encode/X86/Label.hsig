@@ -1,0 +1,11 @@
+{-# language KindSignatures #-}
+
+signature X86.Label where
+
+import Data.Kind (Type)
+import Data.Builder.Catenable.Text (Builder)
+
+data Label :: Type
+instance Eq Label
+
+encode :: Label -> Builder

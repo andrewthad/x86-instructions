@@ -1,0 +1,12 @@
+{-# language KindSignatures #-}
+
+signature X86.Label where
+
+import Data.Kind (Type)
+
+data Label :: Type
+
+-- Requiring that it be possible to compare labels for equality
+-- makes it possible to provide an Eq instance for Operand, which
+-- is pretty useful.
+instance Eq Label
